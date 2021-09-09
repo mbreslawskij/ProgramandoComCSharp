@@ -37,6 +37,7 @@ namespace CSharp.Capitulo01.Sintaxe
             this.incrementaisDecrementaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.booleanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ternariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@ namespace CSharp.Capitulo01.Sintaxe
             this.reduzidasToolStripMenuItem,
             this.incrementaisDecrementaisToolStripMenuItem,
             this.booleanasToolStripMenuItem,
-            this.logicasToolStripMenuItem});
+            this.logicasToolStripMenuItem,
+            this.ternariasToolStripMenuItem});
             this.operaçõesToolStripMenuItem.Name = "operaçõesToolStripMenuItem";
             this.operaçõesToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.operaçõesToolStripMenuItem.Text = "&Operações";
@@ -65,7 +67,7 @@ namespace CSharp.Capitulo01.Sintaxe
             // aritmeticasToolStripMenuItem
             // 
             this.aritmeticasToolStripMenuItem.Name = "aritmeticasToolStripMenuItem";
-            this.aritmeticasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aritmeticasToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.aritmeticasToolStripMenuItem.Text = "&Aritméticas";
             this.aritmeticasToolStripMenuItem.Click += new System.EventHandler(this.aritmeticasToolStripMenuItem_Click);
             // 
@@ -81,7 +83,7 @@ namespace CSharp.Capitulo01.Sintaxe
             // reduzidasToolStripMenuItem
             // 
             this.reduzidasToolStripMenuItem.Name = "reduzidasToolStripMenuItem";
-            this.reduzidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reduzidasToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.reduzidasToolStripMenuItem.Text = "&Reduzidas";
             this.reduzidasToolStripMenuItem.Click += new System.EventHandler(this.reduzidasToolStripMenuItem_Click);
             // 
@@ -103,8 +105,15 @@ namespace CSharp.Capitulo01.Sintaxe
             // 
             this.logicasToolStripMenuItem.Name = "logicasToolStripMenuItem";
             this.logicasToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.logicasToolStripMenuItem.Text = "&Logicas";
+            this.logicasToolStripMenuItem.Text = "&Lógicas";
             this.logicasToolStripMenuItem.Click += new System.EventHandler(this.logicasToolStripMenuItem_Click);
+            // 
+            // ternariasToolStripMenuItem
+            // 
+            this.ternariasToolStripMenuItem.Name = "ternariasToolStripMenuItem";
+            this.ternariasToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.ternariasToolStripMenuItem.Text = "&Ternárias";
+            this.ternariasToolStripMenuItem.Click += new System.EventHandler(this.ternariasToolStripMenuItem_Click);
             // 
             // VariaveisForm
             // 
@@ -134,6 +143,7 @@ namespace CSharp.Capitulo01.Sintaxe
         private System.Windows.Forms.ToolStripMenuItem incrementaisDecrementaisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem booleanasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logicasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ternariasToolStripMenuItem;
     }
 }
 
