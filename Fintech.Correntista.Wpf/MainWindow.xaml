@@ -10,7 +10,9 @@
     <TabControl>
         <TabItem Header="Cadastro de Clientes">
             <TabControl TabStripPlacement="Left">
-                <TabItem Header="Pesquisa"></TabItem>
+                <TabItem Header="Pesquisa" Name="pesquisaClienteTabItem">
+                    <DataGrid x:Name="clienteDataGrid" AutoGenerateColumns="True" CanUserAddRows="False"/>
+                </TabItem>
                 <TabItem Header="Cadastro">
                     <StackPanel>
                         <DockPanel>
@@ -30,8 +32,8 @@
                             <ComboBox x:Name="sexoComboBox" Height="23" VerticalContentAlignment="Center" Width="150" HorizontalAlignment="Left"/>
                         </DockPanel>
                         <DockPanel>
-                            <Label Content="Lagradouro:" Width="120" HorizontalContentAlignment="Right"/>
-                            <TextBox x:Name="lagradouroTectBox" Height="23" VerticalContentAlignment="Center" Width="580" HorizontalAlignment="Left" TextWrapping="NoWrap"/>
+                            <Label Content="Logradouro:" Width="120" HorizontalContentAlignment="Right"/>
+                            <TextBox x:Name="logradouroTectBox" Height="23" VerticalContentAlignment="Center" Width="580" HorizontalAlignment="Left" TextWrapping="NoWrap"/>
                         </DockPanel>
                         <DockPanel>
                             <Label Content="Numero:" Width="120" HorizontalContentAlignment="Right"/>
@@ -47,7 +49,7 @@
                         </DockPanel>
 
                         <DockPanel>
-                            <Button x:Name="incluirClienteButton" Content="Incluir" Margin="120 2 0 0" Height="23" Width="100" HorizontalAlignment="Left" />
+                            <Button x:Name="incluirClienteButton" Content="Incluir" Margin="120 2 0 0" Height="23" Width="100" HorizontalAlignment="Left" Click="incluirClienteButton_Click" />
                         </DockPanel>
                         
                        
