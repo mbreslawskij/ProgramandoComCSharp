@@ -15,7 +15,7 @@ namespace CSharp.Capitulo02.GeradorSenha
             } while (quantidadeDigitos == 0);
 
             var senha = new Senha(quantidadeDigitos);
-            
+
             Console.WriteLine($"Senha gerada: {senha.Valor}");
         }
 

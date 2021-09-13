@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fintech", "Fintech", "{44C2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintech.Dominio", "Fintech.Dominio\Fintech.Dominio.csproj", "{8B827C1A-0BE9-4D0A-8BD1-4EC905DCD64F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintech.Correntista.Wpf", "Fintech.Correntista.Wpf\Fintech.Correntista.Wpf.csproj", "{F8478D24-C467-4FA4-B4F8-8B6864F4E005}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintech.Correntista.Wpf", "Fintech.Correntista.Wpf\Fintech.Correntista.Wpf.csproj", "{CEAEE989-B2AC-4215-98A8-393F225AEEA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.GeradorSenhaTests", "CSharp.Capitulo02.GeradorSenhaTests\CSharp.Capitulo02.GeradorSenhaTests.csproj", "{DAB108C4-3103-4882-A5E3-CE1E7D98CEEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.GeradorSenhaTests", "CSharp.Capitulo02.GeradorSenhaTests\CSharp.Capitulo02.GeradorSenhaTests.csproj", "{33AECB3B-114F-4994-BD28-80AA3DD26E4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,21 +45,21 @@ Global
 		{8B827C1A-0BE9-4D0A-8BD1-4EC905DCD64F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B827C1A-0BE9-4D0A-8BD1-4EC905DCD64F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B827C1A-0BE9-4D0A-8BD1-4EC905DCD64F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8478D24-C467-4FA4-B4F8-8B6864F4E005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8478D24-C467-4FA4-B4F8-8B6864F4E005}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8478D24-C467-4FA4-B4F8-8B6864F4E005}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8478D24-C467-4FA4-B4F8-8B6864F4E005}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DAB108C4-3103-4882-A5E3-CE1E7D98CEEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DAB108C4-3103-4882-A5E3-CE1E7D98CEEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DAB108C4-3103-4882-A5E3-CE1E7D98CEEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DAB108C4-3103-4882-A5E3-CE1E7D98CEEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEAEE989-B2AC-4215-98A8-393F225AEEA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEAEE989-B2AC-4215-98A8-393F225AEEA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEAEE989-B2AC-4215-98A8-393F225AEEA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEAEE989-B2AC-4215-98A8-393F225AEEA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33AECB3B-114F-4994-BD28-80AA3DD26E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33AECB3B-114F-4994-BD28-80AA3DD26E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33AECB3B-114F-4994-BD28-80AA3DD26E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33AECB3B-114F-4994-BD28-80AA3DD26E4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8B827C1A-0BE9-4D0A-8BD1-4EC905DCD64F} = {44C2CD61-4801-4BBE-9806-E5779DECECC4}
-		{F8478D24-C467-4FA4-B4F8-8B6864F4E005} = {44C2CD61-4801-4BBE-9806-E5779DECECC4}
+		{CEAEE989-B2AC-4215-98A8-393F225AEEA6} = {44C2CD61-4801-4BBE-9806-E5779DECECC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {804639B4-7BC2-4842-8942-FC1D601F8A43}

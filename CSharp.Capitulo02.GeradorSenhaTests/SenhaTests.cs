@@ -15,19 +15,22 @@ namespace CSharp.Capitulo02.GeradorSenha.Tests
         public void GerarSenhaSemParametrosDeveRetornarSenhaPadrao()
         {
             var senha = new Senha();
+
             var valorSenha = senha.Gerar();
 
             Assert.IsTrue(valorSenha.Length == Senha.TamanhoMinimo);
 
             Console.WriteLine(valorSenha);
         }
+
         [TestMethod]
-        public void ConstutorPadraoDeveRetornarSenhaPadrao()
+        public void ConstrutorPadraoDeveRetornarSenhaPadrao()
         {
             var senha = new Senha();
 
             Assert.IsTrue(senha.Valor.Length == Senha.TamanhoMinimo);
         }
+
         [TestMethod]
         [DataRow(4)]
         [DataRow(6)]
@@ -41,7 +44,5 @@ namespace CSharp.Capitulo02.GeradorSenha.Tests
 
             Console.WriteLine(senha.Valor);
         }
-
-
     }
 }

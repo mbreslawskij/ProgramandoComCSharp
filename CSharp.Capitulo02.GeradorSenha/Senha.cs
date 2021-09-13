@@ -35,6 +35,7 @@ namespace CSharp.Capitulo02.GeradorSenha
 
                 senha += digito;
             }
+
             return senha;
         }
     }
