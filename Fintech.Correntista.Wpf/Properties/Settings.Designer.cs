@@ -25,7 +25,7 @@ namespace Fintech.Correntista.Wpf.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dados\\Movimento.txt")]
         public string CaminhoArquivoMovimento {
             get {
                 return ((string)(this["CaminhoArquivoMovimento"]));

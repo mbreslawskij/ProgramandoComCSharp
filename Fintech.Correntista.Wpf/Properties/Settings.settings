@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="CaminhoArquivoMovimento" Type="System.String" Scope="Application">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Dados\Movimento.txt</Value>
     </Setting>
   </Settings>
 </SettingsFile>

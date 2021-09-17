@@ -12,7 +12,8 @@ namespace Fintech.Repositorios.SistemaArquivos.Tests
     [TestClass()]
     public class MovimentoRepositorioTests
     {
-        private readonly MovimentoRepositorio repositorio = new("E:\\Cursos\\Desenv Full Stack\\C#\\Projeto01\\ProgramandoComCSharpSet21\\Dados\\Movimento.txt");
+        private readonly MovimentoRepositorio repositorio = new("Dados\\Movimento.txt");
+
         [TestMethod()]
         public void InserirTest()
         {
@@ -22,7 +23,6 @@ namespace Fintech.Repositorios.SistemaArquivos.Tests
             var contaFake = new ContaCorrente(agencia, 233, "4");
             var operacao = new Movimento(50, Operacao.Deposito);
             operacao.Conta = contaFake;
-
             
             repositorio.Inserir(operacao);
         }
@@ -30,11 +30,11 @@ namespace Fintech.Repositorios.SistemaArquivos.Tests
         [TestMethod()]
         public void SelecionarTest()
         {
-            var movimentos = repositorio.Selecionar(22, 23);
+            var movimentos = repositorio.Selecionar(22, 233);
 
             foreach (var movimento in movimentos)
             {
-                Console.WriteLine($"{movimento.Data} - {movimento.Operacao} - {movimento.Valor}");
+                Console.WriteLine($"{movimento.Data} - {movimento.Guid} - {movimento.Operacao} - {movimento.Valor}");
             }
         }
     }
