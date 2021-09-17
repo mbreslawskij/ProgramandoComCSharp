@@ -1,5 +1,6 @@
 ﻿using Fintech.Dominio;
 using Fintech.Dominio.Entidades;
+using Fintech.Repositorios.SistemaArquivos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +23,10 @@ namespace Fintech.Correntista.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly MovimentoRepositorio movimentoRepositorio = new(Properties.Settings.Default.CaminhoArquivoMovimento);
         public List<Cliente> Clientes { get; set; } = new List<Cliente>();
         public Cliente ClienteSelecionado { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -108,6 +111,7 @@ namespace Fintech.Correntista.Wpf
         private void tipoContaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (tipoContaComboBox.SelectedIndex == -1) return;
+
             var tipoConta = (TipoConta)tipoContaComboBox.SelectedItem;
 
             if (tipoConta == TipoConta.ContaEspecial)
@@ -121,46 +125,45 @@ namespace Fintech.Correntista.Wpf
             }
         }
 
-            private void incluirContaButton_Click(object sender, RoutedEventArgs e)
+        private void incluirContaButton_Click(object sender, RoutedEventArgs e)
+        {
+            Conta conta = null;
+
+            var agencia = new Agencia();
+            agencia.Banco = (Banco)bancoComboBox.SelectedItem;
+            agencia.Numero = Convert.ToInt32(numeroAgenciaTextBox.Text);
+            agencia.DigitoVerificador = Convert.ToInt32(dvAgenciaTextBox.Text);
+
+            var numero = Convert.ToInt32(numeroContaTextBox.Text);
+            var digitoVerificador = dvContaTextBox.Text;
+
+            switch ((TipoConta)tipoContaComboBox.SelectedItem)
             {
-                Conta conta = null;
-
-                var agencia = new Agencia();
-                agencia.Banco = (Banco)bancoComboBox.SelectedItem;
-                agencia.Numero = Convert.ToInt32(numeroAgenciaTextBox.Text);
-                agencia.DigitoVerificador = Convert.ToInt32(dvAgenciaTextBox.Text);
-
-                var numero = Convert.ToInt32(numeroContaTextBox.Text);
-                var digitoVerificador = dvContaTextBox.Text;
-
-                switch ((TipoConta)tipoContaComboBox.SelectedItem)
-                {
-                    case TipoConta.ContaCorrente:
-                        conta = new ContaCorrente(agencia, numero, digitoVerificador);
-                        break;
-                    case TipoConta.ContaEspecial:
+                case TipoConta.ContaCorrente:
+                    conta = new ContaCorrente(agencia, numero, digitoVerificador);
+                    break;
+                case TipoConta.ContaEspecial:
                     var limite = Convert.ToDecimal(limiteTextBox.Text);
                     conta = new ContaEspecial(agencia, numero, digitoVerificador, limite);
-                        break;
-                    case TipoConta.Poupanca:
+                    break;
+                case TipoConta.Poupanca:
                     conta = new Poupanca(agencia, numero, digitoVerificador);
-                        break;
-                    default:
-                        break;
-                }
+                    break;
+            }
+
             ClienteSelecionado.Contas.Add(conta);
 
-            MessageBox.Show("Conta adicionada com sucesso");
+            MessageBox.Show("Conta adicionada com sucesso.");
             LimparControlesConta();
-            clienteDataGrid.Items.Refresh();
-            clientesTapItem.Focus();
 
-            }
+            clienteDataGrid.Items.Refresh();
+            clientesTabItem.Focus();
+        }
 
         private void LimparControlesConta()
         {
             clienteTextBox.Clear();
-            bancoComboBox.SelectedItem = -1;
+            bancoComboBox.SelectedIndex = -1;
             numeroAgenciaTextBox.Clear();
             dvAgenciaTextBox.Clear();
             numeroContaTextBox.Clear();
@@ -187,7 +190,14 @@ namespace Fintech.Correntista.Wpf
             var operacao = (Operacao)operacaoComboBox.SelectedItem;
             var valor = Convert.ToDecimal(valorTextBox.Text);
 
-            conta.EfetuarOperacao(valor, operacao);
+            var movimento = conta.EfetuarOperacao(valor, operacao);
+
+            if (movimento != null)
+            {
+                var repositorio = new MovimentoRepositorio("");
+                repositorio.Inserir(movimento); 
+            }
+
             AtualizarGridMovimentacao(conta);
         }
 
@@ -199,12 +209,13 @@ namespace Fintech.Correntista.Wpf
             saldoTextBox.Text = conta.Saldo.ToString("C");
         }
 
-        private void ContaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void contaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var conta = (Conta)contaComboBox.SelectedItem;
 
+            conta.Movimentos = movimentoRepositorio.Selecionar(conta.Agencia.Numero, conta.Numero);
+
             AtualizarGridMovimentacao(conta);
-            
         }
     }
-    }
+}

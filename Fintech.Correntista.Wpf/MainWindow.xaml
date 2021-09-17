@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Fintech Correntista" MinHeight="600" MinWidth="800" WindowState="Maximized">
     <TabControl>
-        <TabItem Header="Clientes" Name ="clientesTapItem">
+        <TabItem Header="Clientes" Name="clientesTabItem">
             <TabControl TabStripPlacement="Left">
                 <TabItem Header="Pesquisa" Name="pesquisaClienteTabItem">
                     <DataGrid x:Name="clienteDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
@@ -40,7 +40,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            
+
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
@@ -125,8 +125,8 @@
                     <TextBox Name="limiteTextBox" Width="150" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap" />
                 </DockPanel>
                 <DockPanel>
-                    <Button Name="incluirContaButton" Content="Incluir" Margin="120 2 0 0" Height="23" HorizontalAlignment="Left" Width="150" Click="incluirContaButton_Click"/>
-
+                    <Button Name="incluirContaButton" Content="Incluir" Margin="120 2 0 0" Height="23" HorizontalAlignment="Left" Width="150"
+                            Click="incluirContaButton_Click"/>
                 </DockPanel>
             </StackPanel>
         </TabItem>
@@ -141,7 +141,7 @@
                     <ComboBox Name="contaComboBox" DisplayMemberPath="Numero"
                               SelectedValuePath="Numero"
                               HorizontalAlignment="Left"
-                              VerticalContentAlignment="Center" Height="23" Width="150" SelectionChanged="ContaComboBox_SelectionChanged"/>
+                              VerticalContentAlignment="Center" Height="23" Width="150" SelectionChanged="contaComboBox_SelectionChanged"/>
                 </DockPanel>
                 <DockPanel>
                     <Label Content="Operação:" Width="120" HorizontalContentAlignment="Right"/>
@@ -154,7 +154,7 @@
                 </DockPanel>
                 <DockPanel>
                     <Button Name="incluirOperacaoButton" Content="Incluir" Margin="120 2 0 0" Height="23"
-                            HorizontalAlignment="Left" Width="150" Click="incluirOperacaoButton_Click" />
+                            HorizontalAlignment="Left" Width="150" Click="incluirOperacaoButton_Click"/>
                 </DockPanel>
                 <DockPanel>
                     <DataGrid Name="movimentacaoDataGrid" AutoGenerateColumns="False" IsReadOnly="True" 

@@ -41,12 +41,12 @@ namespace Fintech.Dominio.Entidades.Tests
                 .Sum(m => m.Valor);
 
             var somaSaques = conta.Movimentos
-               .Where(m => m.Operacao == Operacao.Saque)
-               .Sum(m => m.Valor);
+                .Where(m => m.Operacao == Operacao.Saque)
+                .Sum(m => m.Valor);
 
             //conta.Saldo = 5000;
-            Assert.AreEqual(conta.Saldo, somaDepositos - somaSaques);
 
+            Assert.AreEqual(conta.Saldo, somaDepositos - somaSaques);
         }
     }
 }

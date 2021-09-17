@@ -43,9 +43,10 @@ namespace Fintech.Dominio.Entidades
             return erros;
         }
 
-        public void EfetuarOperacao(decimal valor, Operacao operacao, decimal limite = 0)
+        public virtual Movimento EfetuarOperacao(decimal valor, Operacao operacao, decimal limite = 0)
         {
             var sucesso = true;
+            Movimento movimento = null;
 
             switch (operacao)
             {
@@ -55,7 +56,7 @@ namespace Fintech.Dominio.Entidades
                 case Operacao.Saque:
                     if (Saldo + limite >= valor)
                     {
-                        Saldo -= valor; 
+                        Saldo -= valor;
                     }
                     else
                     {
@@ -64,8 +65,15 @@ namespace Fintech.Dominio.Entidades
                     break;
             }
 
-            if (sucesso) Movimentos.Add(new Movimento(valor, operacao));
+            if (sucesso)
+            {
+                movimento = new Movimento(valor, operacao);
+                movimento.Conta = this;
 
+                Movimentos.Add(movimento);
+            }
+
+            return movimento;
         }
     }
 }

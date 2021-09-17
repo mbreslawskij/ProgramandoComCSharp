@@ -7,7 +7,7 @@ namespace Fintech.Dominio.Entidades
         public ContaCorrente(Agencia agencia, int numero, string digitoVerificador) : base(agencia, numero, digitoVerificador)
         {
             //Numero = numero;
-           // DigitoVerificador = digitoVerificador;
+            //DigitoVerificador = digitoVerificador;
         }
 
         public bool EmitirCheque { get; set; }

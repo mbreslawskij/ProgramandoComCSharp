@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fintech.Dominio.Entidades
 {
@@ -15,10 +11,10 @@ namespace Fintech.Dominio.Entidades
         }
 
         public int Id { get; set; }
-        public Guid Guid { get; set; }
+        public Guid Guid { get; set; } = Guid.NewGuid();
         public DateTime Data { get; set; } = DateTime.Now;
         public Operacao Operacao { get; set; }
         public decimal Valor { get; set; }
-        public Conta conta { get; set; }
+        public Conta Conta { get; set; }
     }
 }

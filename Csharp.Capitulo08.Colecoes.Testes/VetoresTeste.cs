@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace Csharp.Capitulo08.Colecoes.Testes
+namespace CSharp.Capitulo08.Colecoes.Testes
 {
     [TestClass]
     public class VetoresTeste
@@ -16,13 +16,16 @@ namespace Csharp.Capitulo08.Colecoes.Testes
 
             var decimais = new decimal[] { 0.4m, 0.9m, 4, 7.8m };
 
-            foreach(var @decimal in decimais)
+            string[] nomes = { "Vítor", "Avelino" };
+
+            var chars = new[] { 'a', 'b', 'c' };
+
+            foreach (var @decimal in decimais)
             {
-               Console.WriteLine(@decimal);
+                Console.WriteLine(@decimal);
             }
 
-            Console.WriteLine($"O tamanhoo do vetor {nameof(decimais)} é: {decimais.Length}");
-
+            Console.WriteLine($"O tamanho do vetor {nameof(decimais)} é {decimais.Length}.");
         }
 
         [TestMethod]
@@ -34,6 +37,7 @@ namespace Csharp.Capitulo08.Colecoes.Testes
 
             decimais[4] = 2.3m;
         }
+
         [TestMethod]
         public void OrdenacaoTeste()
         {
@@ -43,10 +47,20 @@ namespace Csharp.Capitulo08.Colecoes.Testes
 
             Assert.AreEqual(decimais[0], -1.4m);
         }
-        public decimal Media(decimal x, decimal y)
+
+        [TestMethod]
+        public void ParamsTeste()
         {
-            x = 14.3m;
-            y = 23.4m;
+            var decimais = new decimal[] { 0.3m, 0.8m, 0.2m, 4, 3.3m };
+
+            Console.WriteLine(Media(decimais));
+            Console.WriteLine(Media(0.9m, 8.73m, -6m));
+        }
+
+        private decimal Media(decimal x, decimal y)
+        {
+            //x = 14.3m;
+            //y = 23.4m;
             decimal soma = x + y;
 
             decimal total = soma / 2;
@@ -54,6 +68,36 @@ namespace Csharp.Capitulo08.Colecoes.Testes
             return total;
         }
 
-        private decimal Media(decimal[] decimais);
+        private decimal Media(params decimal[] decimais)
+        {
+            //decimais = new decimal[] { 0.3m, 0.8m, 0.2m, 4, 3.3m };
+            
+            decimal soma = 0;
+
+            foreach (var numero in decimais)
+            {
+                soma += numero;
+            }
+
+            decimal media = soma / decimais.Length;
+
+            return media;
+        }
+
+        [TestMethod]
+        public void TodaStringEhUmVetorTeste()
+        {
+            var nome = "Vítor";
+
+            Assert.AreEqual(nome[0], 'V');
+
+            //nome += " Avelino";
+            // StringBuilder
+
+            foreach (var @char in nome)
+            {
+                Console.Write(@char);
+            }
+        }
     }
 }
